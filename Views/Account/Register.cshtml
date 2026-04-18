@@ -1,0 +1,39 @@
+﻿@model SweetShop.Models.RegisterViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate.unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+
+<h2>Create Account</h2>
+<form asp-action="Register" method="post">
+    <div>
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" type="password" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Sign Up</button>
+</form>
+
+<div>
+    <a asp-action="Login">Already have an account? Login here</a>
+</div>

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SweetShop.Models.Product>
+
+<h2>Our Products</h2>
+<div class="product-grid">
+    @foreach (var product in Model)
+    {
+        <div class="product-item">
+            <img src="@product.ImagePath" alt="@product.Name" height="300px" />
+            <h3>@product.Name</h3>
+            <p>@product.Price?.ToString("C")</p>
+            <!--<a asp-action="Details" asp-route-id="@product.ProductID" class="btn">View Details</a>-->
+            <form method="post" action="@Url.Action("AddToCart", "Cart")">
+                <input type="hidden" name="productId" value="@product.ProductID" />
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </form>
+        </div>
+    }
+</div>
+

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<SweetShop.Models.Product>
+
+<!-- Main Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Welcome to the Sweet Shop</h1>
+        <p>Delicious treats just for you!</p>
+        <a class="btn" href="/ProductCustomer/index" class="btn">Order Now</a>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="products">
+    <div class="container">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            @foreach (var product in Model)
+            {
+                <div class="product-item">
+                    <img src="@product.ImagePath" alt="@product.Name" height="300px" />
+                    <h3>@product.Name</h3>
+                    <p>@product.Price?.ToString("C")</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Sweet Shop. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="assets/js/script.js"></script>

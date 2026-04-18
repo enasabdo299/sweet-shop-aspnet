@@ -1,0 +1,71 @@
+﻿@model SweetShop.Models.DashboardViewModel
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Dashboard</h2>
+<div class="dashboard-summary">
+    <div class="summary-item">
+        <h3>Total Customers</h3>
+        <p>@Model.TotalCustomers</p>
+    </div>
+    <div class="summary-item">
+        <h3>Total Orders</h3>
+        <p>@Model.TotalOrders</p>
+    </div>
+    <div class="summary-item">
+        <h3>Total Products</h3>
+        <p>@Model.TotalProducts</p>
+    </div>
+    <div class="summary-item">
+        <h3>Employee</h3>
+        <p>@Model.Employee</p>
+    </div>
+    <div class="summary-item">
+        <h3>Invoice</h3>
+        <p>@Model.Invoice</p>
+    </div>
+
+    <div class="summary-item">
+        <h3>Inventory</h3>
+        <p>@Model.Inventory</p>
+    </div>
+    <div class="summary-item">
+        <h3>OrderDetail</h3>
+        <p>@Model.OrderDetail</p>
+    </div>
+    <div class="summary-item">
+        <h3>ProductRecipe</h3>
+        <p>@Model.ProductRecipe</p>
+    </div> 
+    <div class="summary-item">
+        <h3>Supplier</h3>
+        <p>@Model.Supplier</p>
+    </div>
+    <div class="summary-item">
+        <h3>IngredientPurchases</h3>
+        <p>@Model.IngredientPurchases</p>
+    </div>
+    <div class="summary-item">
+        <h3>Ingredients</h3>
+        <p>@Model.Ingredients</p>
+    </div>
+</div>
+
+<style>
+    .dashboard-summary {
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .summary-item {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+    }
+</style>

@@ -1,0 +1,322 @@
+﻿
+/* General styling */
+body {
+    font-family: cursive;
+    background-color: #ffe6f0; /* Light pink background */
+    color: #333;
+    margin: 0;
+    padding-top: 70px; /* Space to prevent content from hiding behind fixed header */
+}
+
+/* Fixed Header styling */
+header {
+    font-family: cursive;
+    text-align: center;
+    background-color: #ec4d83; /* Bright pink header */
+    color: white;
+    padding: 15px 0;
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures header stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+    header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    header nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+
+header nav a:hover {
+            color: #ffdbed; /* Light pink on hover */
+        }
+
+/* Sidebar styling */
+aside {
+    background-color: #ffe6f0; /* Light pink for sidebar */
+    border-right: 1px solid #e0e0e0;
+    width: 20%;
+    padding: 20px;
+}
+
+    aside h4 {
+        color: #ff4081;
+        font-size: 1.4rem;
+        margin-top: 0;
+    }
+
+    aside ul {
+        padding: 0;
+    }
+
+        aside ul li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+            aside ul li a {
+                color: #555;
+                text-decoration: none;
+            }
+
+                aside ul li a:hover {
+                    color: #ff4081;
+                }
+
+/* Main content styling */
+main {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 60%;
+}
+
+/* Footer styling */
+footer {
+    background-color: #ec4d83;
+    color: white;
+    padding: 15px;
+}
+
+    footer p {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    aside {
+        display: none;
+    }
+
+    main {
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+        padding: 15px;
+    }
+
+    header nav {
+        text-align: center;
+    }
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+section {
+    display: block;
+    unicode-bidi: isolate;
+    text-align:center;
+}
+
+
+
+/* Container for products */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; /* السماح بلف العناصر إلى السطر التالي عند الحاجة */
+    justify-content: space-between; /* توزيع المسافات بين العناصر */
+    gap: 20px; /* إضافة مسافة بين المنتجات */
+    padding: 20px;
+}
+
+/* Container for product item */
+.product-item {
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر عموديًا (صورة في الأعلى والنص في الأسفل) */
+    align-items: center; /* مركز الصور والنصوص أفقياً */
+    justify-content: center; /* مركز العناصر عموديًا داخل الحاوية */
+    background-color: #fff; /* لون خلفية الحاوية */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px; /* عرض ثابت للحاوية */
+    height: 350px; /* ارتفاع ثابت للحاوية */
+}
+
+    /* Image styling */
+    .product-item img {
+        max-width: 100%; /* تأكد من أن الصورة لا تتجاوز عرض الحاوية */
+        max-height: 200px; /* تحديد أقصى ارتفاع للصورة */
+        object-fit: contain; /* الحفاظ على نسبة العرض إلى الارتفاع الأصلية */
+        margin-bottom: 15px; /* إضافة مسافة بين الصورة والنص */
+    }
+
+    /* Product text styling */
+    .product-item h3,
+    .product-item p {
+        text-align: center; /* مركز النص داخل الحاوية */
+        margin: 5px 0; /* مسافة صغيرة بين النصوص */
+    }
+
+    /* Button styling */
+    .product-item button {
+        background-color: #ec4d83;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .product-item button:hover {
+            background-color: #ff6fa1;
+            transform: translateY(-2px);
+        }
+
+        .product-item button:active {
+            background-color: #ff4081;
+            transform: translateY(1px);
+        }
+
+
+
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+
+/* Basic Button Styling */
+button,
+.btn {
+    background-color: #ff99cc; /* Pink background */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+    /* Hover effect */
+    button:hover,
+    .btn:hover {
+        background-color: #ff6fa1; /* Darker pink on hover */
+        transform: translateY(-2px); /* Slight lift on hover */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    }
+
+    /* Active effect */
+    button:active,
+    .btn:active {
+        background-color: #ff4081; /* Even darker pink when pressed */
+        transform: translateY(1px); /* Subtle press effect */
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Disabled Button */
+    button:disabled,
+    .btn:disabled {
+        background-color: #ffd6e8; /* Lighter pink for disabled state */
+        color: #fff5f8;
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+    }
+
+/* Small button variant */
+.btn-small {
+    padding: 5px 10px;
+    font-size: 0.875rem;
+}
+
+/* Large button variant */
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* تنسيق الصفحة */
+.container-fluid {
+    padding: 20px;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+/* تنسيق صفحة تسجيل الدخول */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-pink {
+    color: #f06292;
+}
+
+.btn{
+    background-color: #ec4d83;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn:hover {
+    background-color: #ff6fa1;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    background-color: #ff4081;
+    transform: translateY(1px);
+}
+
+/* إزالة الخط أسفل الروابط */
+a {
+    text-decoration: none; /* إزالة الخط من تحت النص */
+    color: #ec4d83; /* تعيين لون النص (يمكنك تغيير اللون حسب رغبتك) */
+}
+
+    /* تغيير اللون عند التمرير */
+    a:hover {
+        color: #ff6fa1; /* تغيير اللون عند التمرير فوق الرابط */
+    }
+

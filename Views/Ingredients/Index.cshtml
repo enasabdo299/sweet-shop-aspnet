@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SweetShop.Models.Ingredient>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ingredients</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ingredient in Model)
+        {
+            <tr>
+                <td>@ingredient.Name</td>
+                <td>@ingredient.Quantity</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@ingredient.IngredientID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@ingredient.IngredientID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@ingredient.IngredientID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-primary">Add New Ingredient</a>
