@@ -1,2 +1,72 @@
-# sweet-shop-aspnet
-Sweet Shop E-Commerce Website built with ASP.NET Core MVC - Full database design with Identity, Session Cart, and Admin Dashboard
+# 🍰 Sweet Shop E-Commerce Website
+
+نظام متجر إلكتروني متكامل لبيع الحلويات، تم تطويره باستخدام **ASP.NET Core MVC** مع قاعدة بيانات **SQL Server** ونظام مصادقة **Identity**.
+
+---
+
+## 🛠️ التقنيات المستخدمة
+
+| التقنية | الاستخدام |
+|---------|-----------|
+| ASP.NET Core 7.0 | إطار العمل الرئيسي |
+| MVC Pattern | تنظيم الكود |
+| Entity Framework Core 7 | التعامل مع قاعدة البيانات |
+| SQL Server | قاعدة البيانات |
+| Identity Framework | نظام المصادقة والصلاحيات |
+| Session | تخزين سلة الشراء |
+| Bootstrap + Custom CSS | واجهات المستخدم |
+
+---
+
+## 📊 قاعدة البيانات
+
+تم تصميم قاعدة بيانات علائقية تحتوي على **11 جدولاً**:
+
+- Customers / Employees / Products / Ingredients / ProductRecipes
+- Orders / OrderDetails / Invoices / Suppliers / IngredientPurchases / Inventories
+- AspNetUsers / AspNetRoles (Identity)
+
+---
+
+## ✅ الميزات المنفذة
+
+- ✅ نظام مصادقة آمن (تسجيل دخول / تسجيل حساب / تسجيل خروج)
+- ✅ صلاحيات (Admin / Customer) مع لوحات تحكم مختلفة
+- ✅ لوحة تحكم إدارية متكاملة (إدارة المنتجات، العملاء، الطلبات، الفواتير، المخزون، المكونات، الموردين)
+- ✅ سلة شراء تعتمد على Session
+- ✅ رفع صور للمنتجات
+- ✅ واجهات Frontend للعملاء لعرض المنتجات وإضافتها للسلة
+- ✅ تصميم متجاوب (Responsive)
+
+---
+
+## 👥 أدوار المستخدمين
+
+| الدور | الصلاحيات |
+|-------|-----------|
+| 👑 **Admin** | صلاحية كاملة على النظام (إدارة كل الجداول) |
+| 👤 **Customer** | تصفح منتجات، إضافة إلى السلة، شراء |
+
+---
+
+## 🔧 نقاط التحسين المستقبلية (Known Limitations)
+
+هذا المشروع هو مشروع تدريبي/جامعي، وتم تحديد النقاط التالية لتطويره مستقبلاً:
+
+| النقطة | التحسين المقترح |
+|--------|----------------|
+| 🔸 سلة الشراء تعتمد على Session | التحويل إلى **Database Cart** أو **Cookies** لحفظ السلة بشكل دائم |
+| 🔸 بعض الـ Controllers بدون حماية | إضافة `[Authorize(Roles = "Admin")]` لتقييد الوصول |
+| 🔸 الكود مكتوب مباشرة في Controllers | تطبيق **Repository Pattern** لتحسين الصيانة |
+| 🔸 لا يوجد API | إضافة **RESTful API** لخدمة تطبيقات الموبايل |
+| 🔸 الفالي ديشن بسيط | إضافة `[Required]` و **Custom Validation** |
+| 🔸 لا يوجد اختبارات | كتابة **Unit Tests** للـ Controllers |
+
+---
+
+## 🚀 كيفية تشغيل المشروع
+
+1. فتح المشروع في Visual Studio
+2. تحديث قاعدة البيانات:
+   ```bash
+   Update-Database
